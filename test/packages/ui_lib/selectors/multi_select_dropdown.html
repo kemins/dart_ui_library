@@ -1,0 +1,49 @@
+<polymer-element name="multi-select-dropdown">
+  
+  <template>
+  
+    <link rel="stylesheet" href="selectors.css">
+    <link rel="stylesheet" href="dropdown_selector.css">
+    
+    <link rel="import" href="list_selector.html">
+    
+    <style>
+    @host {
+      :scope {
+      }
+    }
+    
+
+    </style>
+
+    <div style="display: inline-block;">
+    
+      <button id="dorpdownButton"
+              title="{{selectionLabel}}" class="dropDownButton" on-click="{{openCloseDropDown}}">
+        <span id="selectionLabelSpan" class="truncate">{{selectionLabel}}</span>
+        <div id="arrowDiv" class="arrow-down"></div>
+      </button>
+      
+      <div id="mainDiv" style="position: absolute; overflow: hidden;">
+        
+        <div id="divDropDowm" style="pointer-events: auto;">
+          <template if="{{showDropDown}}">
+            <list-selector id="selector" multiSelectAllowed="{{multiSelectAllowed}}" 
+              dataProvider="{{dataProvider}}" selectedValues="{{selectedValues}}" 
+              on-selection-change="{{onSelectionChange}}"
+              width="{{dropDownWidth}}"
+              height="{{dropDownHeight}}"
+              resizable="true">
+            </list-selector>
+          </template>
+        </div>
+        
+      </div>
+    
+    </div>
+    
+  </template>
+  
+  <script type="application/dart" src="multi_select_dropdown.dart"></script>
+  
+</polymer-element>

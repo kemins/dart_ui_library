@@ -1,0 +1,66 @@
+<polymer-element name="test-view">
+  
+  
+  <link rel="import" href="packages/ui_lib/navigators/view_stack.html">
+  <link rel="import" href="packages/ui_lib/selectors/list_selector.html">
+  
+  <!-- views -->
+  <link rel="import" href="tree_view.html">
+  <link rel="import" href="list_selector_view.html">
+  <link rel="import" href="dropdown_view.html">
+  <link rel="import" href="button_bar_view.html">
+  <link rel="import" href="view_stack_view.html">
+  <link rel="import" href="progress_bar_view.html">
+  <link rel="import" href="accordion_test_view.html">
+    
+  <template>
+    <style>
+    @host {
+      :scope {
+      }
+    }
+    
+    
+    list-selector-view, dropdown-view, 
+    tree-view, button-bar-view, view-stack-test-view,
+    progress-bar-view, accordion-test-view{
+      background-color: #ffffff;
+      padding: 10px;
+      width: calc(100% - 22px);
+      height: calc(100% - 22px);
+      border-style: solid;
+      border-color: #000000;
+      border-width: 1px;
+    }
+    
+    </style>
+    
+    <div style="float: left; padding-right: 5px">
+      <list-selector id="menu"
+        dataProvider="{{menuItems}}" 
+        width="200px" height="498px" 
+        multiSelectAllowed="false" showTopControlPanel="false">
+      </list-selector>
+     </div>
+     
+     
+    <div>
+      <view-stack id="viewStack" width="800px" height="500px" selectedIndex="{{selectedIndex}}">
+        
+  
+        <list-selector-view></list-selector-view>
+        <dropdown-view></dropdown-view>
+        <tree-view></tree-view>
+        <button-bar-view></button-bar-view>
+        <view-stack-test-view></view-stack-test-view>
+        <progress-bar-view></progress-bar-view>
+        <accordion-test-view></accordion-test-view>
+        
+      </view-stack>
+     
+     </div> 
+    
+  </template>
+  
+  <script type="application/dart" src="test_view.dart"></script>
+</polymer-element>

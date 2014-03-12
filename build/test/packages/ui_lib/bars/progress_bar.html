@@ -1,0 +1,38 @@
+<polymer-element name="progress-bar">
+  <template>
+    
+    <style>
+    
+      #mainDiv {
+        position: relative;
+      }
+      
+      #percentsLabel {
+        width: 100%;
+        height: 15px;
+        position: absolute;
+        top:50%;
+        margin-top: -8px;
+        left: 0px;
+        text-align: center;
+        font-weight: bold;
+        
+        text-shadow: #ffffff 0px 0px 7px; /* Modern browsers */
+        filter: glow(color=#ffffff,strength=7); /* IE */
+        filter: dropshadow(color=#ffffff,offX=5,offY=7);
+      }
+      
+    </style>
+  
+    <div id="mainDiv">
+
+      <canvas id="progressCanvas" width="{{width}}" height="{{height}}"></canvas>
+             
+      <label id="percentsLabel" >{{percentloaded}}%</label>
+  
+    </div>
+  </template>
+  
+  <script type="application/dart" src="progress_bar.dart"></script>
+  
+</polymer-element>

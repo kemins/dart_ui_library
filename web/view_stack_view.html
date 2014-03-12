@@ -1,0 +1,96 @@
+<polymer-element name="view-stack-test-view">
+  
+  
+  <link rel="import" href="packages/ui_lib/navigators/view_stack.html">
+  <link rel="import" href="packages/ui_lib/navigators/stack_view.html">
+  <link rel="import" href="packages/ui_lib/bars/buttonbar.html">
+    
+  <template>
+    <style>
+      @host {
+        :scope {
+          
+        }
+      }
+      
+      stack-view {
+        background-color: #ffffff;
+        padding: 10px;
+        width: calc(100% - 22px);
+        height: calc(100% - 22px);
+        border-style: solid;
+        border-color: #000000;
+        border-width: 1px;
+      }
+      
+      .screen, .screen1, .screen2, .screen3, .screen4{
+        width: 100%;
+        height: 100%;
+        color: #ffffff;
+        text-align: center;
+      }
+      
+      .screen1 {
+       color: #000000;
+       background-color: yellow;
+      }
+      
+      .screen2 {
+       background-color: blue;
+      }
+      
+      .screen3 {
+       background-color: green;
+      }
+      
+      .screen4 {
+       background-color: orange;
+      }
+    
+    </style>
+    
+    <template if="{{showView}}">
+      <h5>View Stack</h5>
+      
+       <button-bar dataProvider="{{menuDataProvider}}" on-button-click="{{onButtonClick}}"></button-bar>
+       
+       <view-stack width="500px" height="300px" selectedIndex="{{selectedIndex}}" 
+        animationDirection="{{animationDirection}}"
+        animationDuration="{{animationDuration}}">
+          <stack-view>
+            <div class="screen1">Screen 1</div>
+          </stack-view>
+          <stack-view>
+            <div class="screen2">Screen 2</div>
+          </stack-view>
+          <stack-view>
+            <div class="screen3">Screen 3</div>
+          </stack-view>
+          <stack-view>
+            <div class="screen4">Screen 4</div>
+          </stack-view>
+          
+      </view-stack>
+      
+      <label>
+        Animation Direction:
+        <select name="animationDirection" on-change="{{onAnimationDiractionChage}}">
+          <option value="fromLeft" selected="true">From Left</option>
+          <option value="fromRight">From Right</option>
+          <option value="fromTop">From Top</option>
+          <option value="fromBottom">From Bottom</option>
+        </select>
+      </label>
+      
+      <label>
+        Animation Duration:
+        <input type="number" step="10" min="0" max="50000" value="{{animationDurationStr}}"/>
+      </label>
+    
+    </template>
+  
+  </template>
+  
+  <script type="application/dart" src="view-stack-test-view.dart"></script>
+  
+</polymer-element>

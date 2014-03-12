@@ -1,0 +1,89 @@
+<polymer-element name="tree-selector-adv">
+  
+  <link rel="stylesheet" href="selectors.css">
+  <link rel="stylesheet" href="tree_selector.css">
+  
+  <template>
+   
+    <style>
+      @host {
+        :scope {
+        }
+      }
+      
+      #childHolder {
+        padding-left: 10px;
+        width: calc(100% - 10px);
+      }
+      
+      .node, .open-node, .close-node  {
+        position: relative;
+        cursor: pointer;
+        float: left;
+      }
+      
+      .open-node {
+        top: 5px;
+        left: 5px;
+        margin-right: 3px;
+      }
+      
+      .close-node {
+        top: 3px;
+        left: 5px;
+        margin-right: 7px;
+      }
+      
+      .emptyNode {
+        visibility: hidden;
+      }
+      
+    </style>
+    
+  
+     <div id="mainHolder">
+          
+      <template if="{{multiSelectAllowed}}">
+        <div class="top-control-panel">
+          <label>
+            <input class="selectAllCheckBox" type="checkbox" checked="{{allSelected}}"/>Select All
+          </label>
+        </div>
+      </template>
+      
+      <template if="{{!multiSelectAllowed}}">
+        <label on-click="{{unselectAll}}">Unselect</label>
+      </template>
+      
+      <div id="childHolder">
+        <template repeat="{{item in plainDataProvider}}">
+            
+            <div id="node{{item.value}}"
+              style="padding-left: {{indents[item]}}px">
+            
+              <div id="arrow{{item.value}}" class="{{nodeClasses[item]}}" on-click="{{arrowClickHandler}}">
+              </div>
+              
+              <label class="itemRow truncate">
+                <input class="rowValueInput" type="checkbox" checked="{{item.selected}}" value="{{item.value}}"/><span>{{item.label}}</span>
+              </label>
+              
+            </div>
+            
+        </template>
+      </div>
+      
+      <div class="control-panel">
+        <template if="{{showExpandCollapseAll}}">
+          <span class="expand-collapse-all" on-click="{{expandAll}}">Expand All</span>
+          <span class="expand-collapse-all" on-click="{{collapseAll}}">Collapse All</span>
+        </template>
+      </div>
+      
+    </div>
+    
+  </template>
+  
+  <script type="application/dart" src="tree_selector_adv.dart"></script>
+  
+</polymer-element>

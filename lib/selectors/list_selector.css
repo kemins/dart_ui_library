@@ -1,0 +1,15 @@
+#mainHolder {
+  background-color: #ffffff;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 1px;
+  overflow: auto;
+}
+
+label {
+  cursor: pointer;
+}
+
+.unselectLabel {
+  padding-left: 5px;  
+}

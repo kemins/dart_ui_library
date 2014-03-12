@@ -1,0 +1,53 @@
+<polymer-element name="tree-selector">
+  
+  <link rel="import" href="treeSelectorClasses/tree_selector_node.html">
+  
+  <link rel="stylesheet" href="selectors.css">
+  <link rel="stylesheet" href="tree_selector.css">
+  
+  <template>
+   
+    <style>
+      @host {
+        :scope {
+        }
+      }
+    </style>
+    
+  
+     <div id="mainHolder">
+          
+      <template if="{{multiSelectAllowed}}">
+        <div class="top-control-panel">
+          <label>
+            <input class="selectAllCheckBox" type="checkbox" checked="{{allSelected}}"/>Select All
+          </label>
+        </div>
+      </template>
+      
+      <template if="{{!multiSelectAllowed}}">
+        <label on-click="{{unselectAll}}">Unselect</label>
+      </template>
+      
+      <div id="childHolder">
+        <template repeat="{{item in dataProvider}}">
+
+          <tree-node item="{{item}}" rowClickHandler="{{rowClickHandler}}" multiSelectAllowed="{{multiSelectAllowed}}"></tree-node>
+
+        </template>
+      </div>
+      
+      <div class="control-panel">
+        <template if="{{showExpandCollapseAll}}">
+          <span class="expand-collapse-all" on-click="{{expandAll}}">Expand All</span>
+          <span class="expand-collapse-all" on-click="{{collapseAll}}">Collapse All</span>
+        </template>
+      </div>
+      
+    </div>
+    
+  </template>
+  
+  <script type="application/dart" src="tree_selector.dart"></script>
+  
+</polymer-element>

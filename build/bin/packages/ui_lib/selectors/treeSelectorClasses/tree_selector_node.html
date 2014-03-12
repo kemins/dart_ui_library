@@ -1,0 +1,27 @@
+<polymer-element name="tree-node">
+  
+  <link rel="import" href="tree_selector_node.html">
+  
+  <link rel="stylesheet" href="tree_node.css">
+  <link rel="stylesheet" href="../selectors.css">
+   
+  <template>
+     
+   <div id="arrow" on-click="{{arrowClickHandler}}"></div>
+    
+    <label class="itemRow truncate">
+      <input class="rowValueInput" type="checkbox" checked="{{item.selected}}" value="{{item.value}}"/><span>{{item.label}}</span>
+    </label> 
+   
+    <div style="overflow: hidden;">
+      <div id="childrenDiv">
+        <template if="{{!item.collapsed}}" repeat="{{child in item.children}}">
+          <tree-node item="{{child}}" multiSelectAllowed="{{multiSelectAllowed}}"></tree-node>
+        </template>
+      </div>
+    </div>
+  
+  </template>
+  
+  <script type="application/dart" src="tree_selector_node.dart"></script>
+</polymer-element>

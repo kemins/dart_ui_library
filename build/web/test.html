@@ -1,0 +1,931 @@
+<!DOCTYPE html><html><head><script src="packages/shadow_dom/shadow_dom.debug.js"></script>
+<script src="packages/custom_element/custom-elements.debug.js"></script>
+<script src="packages/browser/interop.js"></script>
+
+<meta charset="utf-8">
+<title>Test UI Library</title>
+<link rel="stylesheet" href="style.css">
+
+
+
+<script src="test.html_bootstrap.dart.js"></script>
+
+</head>
+
+<body><polymer-element name="view-stack">
+  
+  <template>
+    <style>
+    
+    @host {
+      :scope {
+      }
+    }
+    
+    #contentHolder{
+      position: relative;
+      background-color: #999999;
+      width: 100px;
+      height: 100px;
+      overflow: hidden;
+    }
+    
+    </style>
+    
+    <div id="contentHolder">
+      <content></content>
+    </div>
+    
+  </template>
+  
+    
+</polymer-element><polymer-element name="list-selector">
+  
+  <link rel="stylesheet" href="packages/ui_lib/selectors/selectors.css">
+  <link rel="stylesheet" href="packages/ui_lib/selectors/list_selector.css">
+  
+  <template>
+  
+    <style>
+    @host {
+    }
+    
+    </style>
+
+     <div id="mainHolder" class="resizableBox">
+     
+     <template if="{{showTopControlPanel}}">
+      <div class="top-control-panel">
+        <template if="{{multiSelectAllowed}}">
+          <label>
+            <input class="selectAllCheckBox" type="checkbox" checked="{{allSelected}}">Select All
+          </label>
+        </template>
+          
+        <template if="{{!multiSelectAllowed}}"> 
+          <label class="unselectLabel" on-click="{{unselectAll}}">
+            Unselect
+          </label>
+        </template>  
+      </div>
+     </template>
+      
+      <template repeat="{{item in dataProvider}}">
+        
+        <label class="itemRow truncate">
+          <template if="{{multiSelectAllowed}}">
+            <input type="checkbox" checked="{{item.selected}}" value="{{item.value}}"><span>{{item.label}}</span>
+          </template>
+          <template if="{{!multiSelectAllowed}}">
+            <input type="radio" name="{{radioGroupName}}" checked="{{item.selected}}" value="{{item.value}}"><span>{{item.label}}</span>
+          </template>
+        </label>
+         
+      </template>
+     
+     </div>
+      
+  </template>
+  
+  
+  
+</polymer-element><polymer-element name="tree-node">
+  
+  <link rel="import" href="packages/ui_lib/selectors/treeSelectorClasses/tree_selector_node.html">
+  
+  <link rel="stylesheet" href="packages/ui_lib/selectors/treeSelectorClasses/tree_node.css">
+  <link rel="stylesheet" href="packages/ui_lib/selectors/selectors.css">
+   
+  <template>
+     
+   <div id="arrow" on-click="{{arrowClickHandler}}"></div>
+    
+    <label class="itemRow truncate">
+      <input class="rowValueInput" type="checkbox" checked="{{item.selected}}" value="{{item.value}}"><span>{{item.label}}</span>
+    </label> 
+   
+    <div style="overflow: hidden;">
+      <div id="childrenDiv">
+        <template if="{{!item.collapsed}}" repeat="{{child in item.children}}">
+          <tree-node item="{{child}}" multiselectallowed="{{multiSelectAllowed}}"></tree-node>
+        </template>
+      </div>
+    </div>
+  
+  </template>
+  
+  
+</polymer-element><polymer-element name="tree-selector">
+  
+  <link rel="import" href="packages/ui_lib/selectors/treeSelectorClasses/tree_selector_node.html">
+  
+  <link rel="stylesheet" href="packages/ui_lib/selectors/selectors.css">
+  <link rel="stylesheet" href="packages/ui_lib/selectors/tree_selector.css">
+  
+  <template>
+   
+    <style>
+      @host {
+        :scope {
+        }
+      }
+    </style>
+    
+  
+     <div id="mainHolder">
+          
+      <template if="{{multiSelectAllowed}}">
+        <div class="top-control-panel">
+          <label>
+            <input class="selectAllCheckBox" type="checkbox" checked="{{allSelected}}">Select All
+          </label>
+        </div>
+      </template>
+      
+      <template if="{{!multiSelectAllowed}}">
+        <label on-click="{{unselectAll}}">Unselect</label>
+      </template>
+      
+      <div id="childHolder">
+        <template repeat="{{item in dataProvider}}">
+
+          <tree-node item="{{item}}" rowclickhandler="{{rowClickHandler}}" multiselectallowed="{{multiSelectAllowed}}"></tree-node>
+
+        </template>
+      </div>
+      
+      <div class="control-panel">
+        <template if="{{showExpandCollapseAll}}">
+          <span class="expand-collapse-all" on-click="{{expandAll}}">Expand All</span>
+          <span class="expand-collapse-all" on-click="{{collapseAll}}">Collapse All</span>
+        </template>
+      </div>
+      
+    </div>
+    
+  </template>
+  
+  
+  
+</polymer-element><polymer-element name="tree-selector-adv">
+  
+  <link rel="stylesheet" href="packages/ui_lib/selectors/selectors.css">
+  <link rel="stylesheet" href="packages/ui_lib/selectors/tree_selector.css">
+  
+  <template>
+   
+    <style>
+      @host {
+        :scope {
+        }
+      }
+      
+      #childHolder {
+        padding-left: 10px;
+        width: calc(100% - 10px);
+      }
+      
+      .node, .open-node, .close-node  {
+        position: relative;
+        cursor: pointer;
+        float: left;
+      }
+      
+      .open-node {
+        top: 5px;
+        left: 5px;
+        margin-right: 3px;
+      }
+      
+      .close-node {
+        top: 3px;
+        left: 5px;
+        margin-right: 7px;
+      }
+      
+      .emptyNode {
+        visibility: hidden;
+      }
+      
+    </style>
+    
+  
+     <div id="mainHolder">
+          
+      <template if="{{multiSelectAllowed}}">
+        <div class="top-control-panel">
+          <label>
+            <input class="selectAllCheckBox" type="checkbox" checked="{{allSelected}}">Select All
+          </label>
+        </div>
+      </template>
+      
+      <template if="{{!multiSelectAllowed}}">
+        <label on-click="{{unselectAll}}">Unselect</label>
+      </template>
+      
+      <div id="childHolder">
+        <template repeat="{{item in plainDataProvider}}">
+            
+            <div id="node{{item.value}}" style="padding-left: {{indents[item]}}px">
+            
+              <div id="arrow{{item.value}}" class="{{nodeClasses[item]}}" on-click="{{arrowClickHandler}}">
+              </div>
+              
+              <label class="itemRow truncate">
+                <input class="rowValueInput" type="checkbox" checked="{{item.selected}}" value="{{item.value}}"><span>{{item.label}}</span>
+              </label>
+              
+            </div>
+            
+        </template>
+      </div>
+      
+      <div class="control-panel">
+        <template if="{{showExpandCollapseAll}}">
+          <span class="expand-collapse-all" on-click="{{expandAll}}">Expand All</span>
+          <span class="expand-collapse-all" on-click="{{collapseAll}}">Collapse All</span>
+        </template>
+      </div>
+      
+    </div>
+    
+  </template>
+  
+  
+  
+</polymer-element><polymer-element name="tree-view">
+  
+  
+  <link rel="import" href="packages/ui_lib/selectors/tree_selector.html">
+  <link rel="import" href="packages/ui_lib/selectors/tree_selector_adv.html">
+    
+  <template>
+    <style>
+    @host {
+      :scope {
+    }
+    
+    </style>
+    
+    <template if="{{showView}}">
+      <h5>Tree</h5>
+      
+      <div style="float: left;">
+      
+        <!--
+        <tree-selector-adv 
+                         dataProvider="{{treeSelectorItems}}" 
+                         selectedValues="{{treeSelectedValues}}" 
+                         width="300px" 
+                         height="300px">
+          </tree-selector-adv>
+         -->
+        <tree-selector id="tree" dataprovider="{{treeSelectorItems}}" selectedvalues="{{treeSelectedValues}}" width="300px" height="300px" on-selection-change="{{onTreeSelectionChange}}">
+        </tree-selector>
+      </div>
+      
+      <!--
+      <div>
+        <label>
+          Selected values:
+          <template repeat="{{item in treeSelectedValues}}">
+            {{item}};
+          </template>
+        </label>
+      </div>
+      -->
+      
+      <div>
+        <h5>Selected Items:</h5>
+        <template repeat="{{item in treeSelectedItems}}">
+          {{item.label}};
+        </template>
+      </div>
+    </template>
+    
+  </template>
+  
+  
+  
+</polymer-element><polymer-element name="list-selector-view">
+  
+  
+  <link rel="import" href="packages/ui_lib/selectors/list_selector.html">
+    
+  <template>
+    <style>
+    @host {
+      :scope {
+    }
+    
+    </style>
+    
+    <template if="{{showView}}">
+      <div style="float: left; width: 50%">
+        <h5>Multi Selector</h5>
+        <list-selector dataprovider="{{listSelectorItems}}" selectedvalues="{{listSelectedValues}}" width="300px" height="300px" on-selection-change="{{onListSelectionChange}}">
+        </list-selector>
+        
+          <h5>Selected Items:
+          <template repeat="{{item in listSelectedItems}}">
+            {{item.label}};
+          </template>
+          </h5>
+        
+      </div>
+      
+      <div>
+        <h5>Single Selector</h5>
+        
+        <list-selector dataprovider="{{listSingleSelectorItems}}" width="300px" height="300px" multiselectallowed="false" on-selection-change="{{onListSingleSelectionChange}}">
+        </list-selector>
+        
+        <h5>Selected Item: {{listSingleSelectorSelectedItem.label}}</h5>
+      </div>
+    </template>
+    
+    
+  </template>
+  
+  
+  
+</polymer-element><polymer-element name="multi-select-dropdown">
+  
+  <template>
+  
+    <link rel="stylesheet" href="packages/ui_lib/selectors/selectors.css">
+    <link rel="stylesheet" href="packages/ui_lib/selectors/dropdown_selector.css">
+    
+    <link rel="import" href="packages/ui_lib/selectors/list_selector.html">
+    
+    <style>
+    @host {
+      :scope {
+      }
+    }
+    
+
+    </style>
+
+    <div style="display: inline-block;">
+    
+      <button id="dorpdownButton" title="{{selectionLabel}}" class="dropDownButton" on-click="{{openCloseDropDown}}">
+        <span id="selectionLabelSpan" class="truncate">{{selectionLabel}}</span>
+        <div id="arrowDiv" class="arrow-down"></div>
+      </button>
+      
+      <div id="mainDiv" style="position: absolute; overflow: hidden;">
+        
+        <div id="divDropDowm" style="pointer-events: auto;">
+          <template if="{{showDropDown}}">
+            <list-selector id="selector" multiselectallowed="{{multiSelectAllowed}}" dataprovider="{{dataProvider}}" selectedvalues="{{selectedValues}}" on-selection-change="{{onSelectionChange}}" width="{{dropDownWidth}}" height="{{dropDownHeight}}" resizable="true">
+            </list-selector>
+          </template>
+        </div>
+        
+      </div>
+    
+    </div>
+    
+  </template>
+  
+  
+  
+</polymer-element><polymer-element name="tree-dropdown">
+  
+  <template>
+  
+    <link rel="stylesheet" href="packages/ui_lib/selectors/selectors.css">
+    <link rel="stylesheet" href="packages/ui_lib/selectors/dropdown_selector.css">
+    
+    <link rel="import" href="packages/ui_lib/selectors/tree_selector_adv.html">
+    
+    <style>
+    @host {
+      :scope {
+      }
+      
+    }
+
+    </style>
+
+    <div style="display: inline-block;">
+    
+      <button id="dorpdownButton" title="{{selectionLabel}}" class="dropDownButton" on-click="{{openCloseDropDown}}">
+        <span id="selectionLabelSpan" class="truncate">{{selectionLabel}}</span>
+        <div id="arrowDiv" class="arrow-down"></div>
+      </button>
+      
+      <div id="mainDiv" style="position: absolute; overflow: hidden;">
+        
+        <div id="divDropDowm" style="pointer-events: auto;">
+          <template if="{{showDropDown}}">
+            <tree-selector-adv id="selector" multiselectallowed="{{multiSelectAllowed}}" dataprovider="{{dataProvider}}" selectedvalues="{{selectedValues}}" on-selection-change="{{onSelectionChange}}" width="{{dropDownWidth}}" height="{{dropDownHeight}}" resizable="true">
+            </tree-selector-adv>
+          </template>
+        </div>
+        
+      </div>
+    
+    </div>
+    
+  </template>
+  
+  
+  
+</polymer-element><polymer-element name="dropdown-view">
+  
+  
+  <link rel="import" href="packages/ui_lib/selectors/multi_select_dropdown.html">
+  <link rel="import" href="packages/ui_lib/selectors/tree_dropdown.html">
+    
+  <template>
+    <style>
+    @host {
+      :scope {
+      
+      ect DropDown
+
+
+    }
+    
+    </style>
+    
+    <template if="{{showView}}">
+      <div style="float: left; width: 50%">
+        <div><h5>Multi Select DropDown</h5></div>
+        
+            <multi-select-dropdown id="multiSelector" dataprovider="{{multiselectorItems}}" selectedvalues="{{multiselectorSelectedValues}}" dropdownwidth="200px" dropdownheight="210px">
+            </multi-select-dropdown>
+        
+        <div>
+          <h5>Selected Items:</h5>
+          <template repeat="{{item in multiselectorSelectedItems}}">
+            {{item.label}};
+          </template>
+        </div>
+        
+      </div>
+      
+      <div>
+        <div><h5>Tree DropDown</h5></div>
+        <tree-dropdown id="treeSelector" dataprovider="{{treeItems}}" selectedvalues="{{treeSelectedValues}}" dropdownwidth="200px" dropdownheight="210px">
+         </tree-dropdown>
+         
+         <div>
+          <h5>Selected Items:</h5>
+          <template repeat="{{item in treeSelectedItems}}">
+            {{item.label}};
+          </template>
+        </div>
+      </div>
+    </template>
+    
+   
+  </template>
+  
+  
+  
+</polymer-element><polymer-element name="button-bar">
+  
+  <template>
+    <style>
+    @host {
+      :scope {
+      }
+    }
+    
+    span {
+    }
+    
+    button {
+    }
+    
+    </style>
+    
+    <span>
+      <template bind="" repeat="{{item in dataProvider}}">
+        <button on-click="{{onButtonClick}}" value="{{item.value}}">{{item.label}}</button>
+      </template>
+    </span>
+    
+  </template>
+  
+  
+  
+</polymer-element><polymer-element name="button-bar-view">
+  
+  
+  <link rel="import" href="packages/ui_lib/bars/buttonbar.html">
+    
+  <template>
+    <style>
+    @host {
+      :scope {
+    }
+    
+    </style>
+    
+    <template if="{{showView}}">
+      <h5>Button Bar</h5>
+      
+      <button-bar dataprovider="{{dataProvider}}" on-button-click="{{onButtonClick}}"></button-bar>
+      
+      <div>
+        <h5>Clicked Button: {{selectedValue}}</h5>
+      </div>
+    </template>
+    
+  </template>
+  
+  
+  
+</polymer-element><polymer-element name="stack-view">
+  
+  <template>
+    <style>
+    
+    @host {
+      :scope {
+      }
+    }
+    
+    
+    </style>
+    
+     <template if="{{showView}}">
+      <content></content>
+     </template>
+    
+  </template>
+  
+    
+</polymer-element><polymer-element name="view-stack-test-view">
+  
+  
+  <link rel="import" href="packages/ui_lib/navigators/view_stack.html">
+  <link rel="import" href="packages/ui_lib/navigators/stack_view.html">
+  <link rel="import" href="packages/ui_lib/bars/buttonbar.html">
+    
+  <template>
+    <style>
+      @host {
+        :scope {
+          
+        }
+      }
+      
+      stack-view {
+        background-color: #ffffff;
+        padding: 10px;
+        width: calc(100% - 22px);
+        height: calc(100% - 22px);
+        border-style: solid;
+        border-color: #000000;
+        border-width: 1px;
+      }
+      
+      .screen, .screen1, .screen2, .screen3, .screen4{
+        width: 100%;
+        height: 100%;
+        color: #ffffff;
+        text-align: center;
+      }
+      
+      .screen1 {
+       color: #000000;
+       background-color: yellow;
+      }
+      
+      .screen2 {
+       background-color: blue;
+      }
+      
+      .screen3 {
+       background-color: green;
+      }
+      
+      .screen4 {
+       background-color: orange;
+      }
+    
+    </style>
+    
+    <template if="{{showView}}">
+      <h5>View Stack</h5>
+      
+       <button-bar dataprovider="{{menuDataProvider}}" on-button-click="{{onButtonClick}}"></button-bar>
+       
+       <view-stack width="500px" height="300px" selectedindex="{{selectedIndex}}" animationdirection="{{animationDirection}}" animationduration="{{animationDuration}}">
+          <stack-view>
+            <div class="screen1">Screen 1</div>
+          </stack-view>
+          <stack-view>
+            <div class="screen2">Screen 2</div>
+          </stack-view>
+          <stack-view>
+            <div class="screen3">Screen 3</div>
+          </stack-view>
+          <stack-view>
+            <div class="screen4">Screen 4</div>
+          </stack-view>
+          
+      </view-stack>
+      
+      <label>
+        Animation Direction:
+        <select name="animationDirection" on-change="{{onAnimationDiractionChage}}">
+          <option value="fromLeft" selected="true">From Left</option>
+          <option value="fromRight">From Right</option>
+          <option value="fromTop">From Top</option>
+          <option value="fromBottom">From Bottom</option>
+        </select>
+      </label>
+      
+      <label>
+        Animation Duration:
+        <input type="number" step="10" min="0" max="50000" value="{{animationDurationStr}}">
+      </label>
+    
+    </template>
+  
+  </template>
+  
+  
+  
+</polymer-element><polymer-element name="progress-bar">
+  <template>
+    
+    <style>
+    
+      #mainDiv {
+        position: relative;
+      }
+      
+      #percentsLabel {
+        width: 100%;
+        height: 15px;
+        position: absolute;
+        top:50%;
+        margin-top: -8px;
+        left: 0px;
+        text-align: center;
+        font-weight: bold;
+        
+        text-shadow: #ffffff 0px 0px 7px; /* Modern browsers */
+        filter: glow(color=#ffffff,strength=7); /* IE */
+        filter: dropshadow(color=#ffffff,offX=5,offY=7);
+      }
+      
+    </style>
+  
+    <div id="mainDiv">
+
+      <canvas id="progressCanvas" width="{{width}}" height="{{height}}"></canvas>
+             
+      <label id="percentsLabel">{{percentloaded}}%</label>
+  
+    </div>
+  </template>
+  
+  
+  
+</polymer-element><polymer-element name="progress-bar-view">
+  
+  <link rel="import" href="packages/ui_lib/bars/progress_bar.html">
+    
+  <template>
+    <style>
+      @host {
+        :scope {
+          
+        }
+      }
+      
+    </style>
+    
+    <template if="{{showView}}">
+      <h5>Progress Bar</h5>
+      
+       <label>
+          Progress Total:
+          <input type="number" step="1" min="0" max="1000" value="{{progressTotalStr}}">
+        </label>
+        <label>
+          Progress Current:
+          <input type="number" step="1" min="0" max="1000" value="{{progressCurrentStr}}">
+        </label>
+       <progress-bar total="{{progressTotal}}" current="{{progressCurrent}}" width="250" fillcolors="['#9163ab', '#c6a0de', '#9163ab']" strokecolors="['#d9d9ec', '#ffffff', '#d9d9ec']"></progress-bar>
+       <progress-bar total="100" current="40" width="250" fillcolors="['#f6d257', '#ffeca9', '#f6d257']" strokecolors="['#d9d9ec', '#ffffff', '#d9d9ec']"></progress-bar>
+       <progress-bar total="100" current="50" width="250" fillcolors="['#0068a7', '#50b3eb', '#0068a7']" strokecolors="['#d9d9ec', '#ffffff', '#d9d9ec']"></progress-bar>
+       <progress-bar total="100" current="70" width="250" fillcolors="['#028dd4', '#79c9f2', '#028dd4']" strokecolors="['#d9d9ec', '#ffffff', '#d9d9ec']"></progress-bar>
+       <progress-bar total="100" current="100" width="250" fillcolors="['#ffc423', '#fde09b', '#ffc423']" strokecolors="['#d9d9ec', '#ffffff', '#d9d9ec']"></progress-bar>
+     
+    </template>
+  
+  </template>
+  
+  
+  
+</polymer-element><polymer-element name="accordion-stack">
+  
+  <template>
+    <style>
+    
+    @host {
+      :scope {
+      }
+    }
+    
+    #contentHolder{
+      position: relative;
+      background-color: #999999;
+      width: 100px;
+      height: 100px;
+      overflow: hidden;
+    }
+    
+    </style>
+    
+    <div id="contentHolder" style="width: {{width}}; height: {{height}}">
+      <content></content>
+    </div>
+    
+  </template>
+  
+    
+</polymer-element><polymer-element name="accordion-view">
+  
+  <template>
+    <style>
+    
+    @host {
+      :scope {
+      }
+    }
+    
+    #topHeaderButton {
+      width: 100%;
+    }
+    
+    #contentDiv {
+      widows: 100%;
+    }
+    
+    </style>
+    
+    <button id="topHeaderButton" on-click="{{onButtonClick}}">{{title}}</button>
+   
+    <div id="contentDiv">
+      <template if="{{showView}}">
+        <content></content>
+      </template>
+    </div>
+  
+  </template>
+  
+    
+</polymer-element><polymer-element name="accordion-test-view">
+  
+  
+  <link rel="import" href="packages/ui_lib/navigators/accordion.html">
+  <link rel="import" href="packages/ui_lib/navigators/accordion_view.html">
+    
+  <template>
+    <style>
+      @host {
+        :scope {
+          
+        }
+      }
+      
+      .screen, .screen1, .screen2, .screen3, .screen4{
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        color: #ffffff;
+        text-align: center;
+      }
+      
+      .screen1 {
+       color: #000000;
+       background-color: yellow;
+      }
+      
+      .screen2 {
+       background-color: blue;
+      }
+      
+      .screen3 {
+       background-color: green;
+      }
+      
+      .screen4 {
+       background-color: orange;
+      }
+    
+    </style>
+    
+    <template if="{{showView}}">
+      <h5>Accordion</h5>
+      
+       <accordion-stack width="500px" height="300px" headerheight="{{headerHeight}}">
+          <accordion-view title="Screen 1">
+            <div class="screen1">Screen 1</div>
+          </accordion-view>
+          <accordion-view title="Screen 2">
+            <div class="screen2">Screen 2</div>
+          </accordion-view>
+          <accordion-view title="Screen 3">
+            <div class="screen3">Screen 3</div>
+          </accordion-view>
+          <accordion-view title="Screen 4">
+            <div class="screen4">Screen 4</div>
+          </accordion-view>
+          
+      </accordion-stack>
+  
+      <label>
+        Header Height:
+        <input type="number" value="{{headerHeightStr}}" step="1" min="0" max="100">    
+      </label>
+    </template>
+  
+  </template>
+  
+  
+  
+</polymer-element><polymer-element name="test-view">
+  
+  
+  <link rel="import" href="packages/ui_lib/navigators/view_stack.html">
+  <link rel="import" href="packages/ui_lib/selectors/list_selector.html">
+  
+  <!-- views -->
+  <link rel="import" href="tree_view.html">
+  <link rel="import" href="list_selector_view.html">
+  <link rel="import" href="dropdown_view.html">
+  <link rel="import" href="button_bar_view.html">
+  <link rel="import" href="view_stack_view.html">
+  <link rel="import" href="progress_bar_view.html">
+  <link rel="import" href="accordion_test_view.html">
+    
+  <template>
+    <style>
+    @host {
+      :scope {
+      }
+    }
+    
+    
+    list-selector-view, dropdown-view, 
+    tree-view, button-bar-view, view-stack-test-view,
+    progress-bar-view, accordion-test-view{
+      background-color: #ffffff;
+      padding: 10px;
+      width: calc(100% - 22px);
+      height: calc(100% - 22px);
+      border-style: solid;
+      border-color: #000000;
+      border-width: 1px;
+    }
+    
+    </style>
+    
+    <div style="float: left; padding-right: 5px">
+      <list-selector id="menu" dataprovider="{{menuItems}}" width="200px" height="498px" multiselectallowed="false" showtopcontrolpanel="false">
+      </list-selector>
+     </div>
+     
+     
+    <div>
+      <view-stack id="viewStack" width="800px" height="500px" selectedindex="{{selectedIndex}}">
+        
+  
+        <list-selector-view></list-selector-view>
+        <dropdown-view></dropdown-view>
+        <tree-view></tree-view>
+        <button-bar-view></button-bar-view>
+        <view-stack-test-view></view-stack-test-view>
+        <progress-bar-view></progress-bar-view>
+        <accordion-test-view></accordion-test-view>
+        
+      </view-stack>
+     
+     </div> 
+    
+  </template>
+  
+  
+</polymer-element>
+
+  <h1>Ui library Test</h1>
+
+ <test-view></test-view>
+ <div id="popupOverlay"></div>
+ 
+
+
+</body></html>

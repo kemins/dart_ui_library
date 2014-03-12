@@ -1,0 +1,122 @@
+.itemRow, .selectAllDiv, .expand-collapse-all {
+  cursor: pointer;
+  padding-right: 5px;
+}
+
+.itemRow:HOVER {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.selectAllDiv, .expand-collapse-all {
+  text-decoration: underline;
+}
+
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+.arrow-up {
+  width: 0; 
+  height: 0; 
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  
+  border-bottom: 5px solid black;
+}
+
+.itemRow, .selectAllDiv {
+  cursor: pointer;
+  padding-right: 5px;
+}
+
+.arrow-down {
+  width: 0; 
+  height: 0; 
+  border-left: 8px inset transparent;
+  border-right: 8px inset transparent;
+  
+  border-top: 10px solid #333333;
+}
+
+.arrow-down-small {
+  width: 0; 
+  height: 0; 
+  border-left: 6px inset transparent;
+  border-right: 6px inset transparent;
+  
+  border-top: 8px solid #333333;
+}
+
+.arrow-up-small {
+  width: 0; 
+  height: 0;
+  border-left: 6px inset transparent;
+  border-right: 6px inset transparent;
+  
+  border-bottom: 8px solid black;
+}
+
+.arrow-right {
+  width: 0; 
+  height: 0; 
+  border-top: 60px inset transparent;
+  border-bottom: 60px inset transparent;
+  
+  border-left: 60px solid green;
+}
+
+.arrow-right-small {
+  width: 0; 
+  height: 0; 
+  border-top: 6px inset transparent;
+  border-bottom: 6px inset transparent;
+  
+  border-left: 8px solid black;
+}
+
+.arrow-left {
+  width: 0; 
+  height: 0; 
+  border-top: 10px inset transparent;
+  border-bottom: 10px inset transparent; 
+  
+  border-right:10px solid blue; 
+}
+
+.promptStyle {
+  color: #999999;
+  font-style: italic;
+}
+
+.top-control-panel, .control-panel{
+  background-color: #333333;
+  color: #ffffff;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+.top-control-panel{
+  padding-top: 0px;
+  padding-right: 5px;
+}
+
+input[type="radio"]:checked + span { 
+  font-weight: bold;
+}
+    
+input[type="checkbox"]:checked + span { 
+  font-weight: bold;
+}
+
+div, label{
+ resize: none;
+}
+.resizableBox {
+  resize: both;
+  overflow: hidden;
+}

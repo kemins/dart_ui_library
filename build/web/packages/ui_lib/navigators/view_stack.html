@@ -1,0 +1,28 @@
+<polymer-element name="view-stack">
+  
+  <template>
+    <style>
+    
+    @host {
+      :scope {
+      }
+    }
+    
+    #contentHolder{
+      position: relative;
+      background-color: #999999;
+      width: 100px;
+      height: 100px;
+      overflow: hidden;
+    }
+    
+    </style>
+    
+    <div id="contentHolder">
+      <content></content>
+    </div>
+    
+  </template>
+  
+  <script type="application/dart" src="view_stack.dart"></script>  
+</polymer-element>

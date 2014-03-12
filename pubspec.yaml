@@ -1,0 +1,8 @@
+name: ui_lib
+description: A UI library app.
+dependencies:
+  animation: any
+  polymer: any
+transformers:
+- polymer:
+    entry_points: web/test.html

@@ -1,0 +1,51 @@
+<polymer-element name="list-selector-view">
+  
+  
+  <link rel="import" href="packages/ui_lib/selectors/list_selector.html">
+    
+  <template>
+    <style>
+    @host {
+      :scope {
+    }
+    
+    </style>
+    
+    <template if="{{showView}}">
+      <div style="float: left; width: 50%">
+        <h5>Multi Selector</h5>
+        <list-selector dataProvider="{{listSelectorItems}}" 
+                       selectedValues="{{listSelectedValues}}" 
+                       width="300px" 
+                       height="300px"
+                       on-selection-change={{onListSelectionChange}}>
+        </list-selector>
+        
+          <h5>Selected Items:
+          <template repeat="{{item in listSelectedItems}}">
+            {{item.label}};
+          </template>
+          </h5>
+        
+      </div>
+      
+      <div>
+        <h5>Single Selector</h5>
+        
+        <list-selector dataProvider="{{listSingleSelectorItems}}" 
+                       width="300px" 
+                       height="300px"
+                       multiSelectAllowed="false"
+                       on-selection-change={{onListSingleSelectionChange}}>
+        </list-selector>
+        
+        <h5>Selected Item: {{listSingleSelectorSelectedItem.label}}</h5>
+      </div>
+    </template>
+    
+    
+  </template>
+  
+  <script type="application/dart" src="list_selector_view.dart"></script>
+  
+</polymer-element>

@@ -1,0 +1,32 @@
+<polymer-element name="accordion-view">
+  
+  <template>
+    <style>
+    
+    @host {
+      :scope {
+      }
+    }
+    
+    #topHeaderButton {
+      width: 100%;
+    }
+    
+    #contentDiv {
+      widows: 100%;
+    }
+    
+    </style>
+    
+    <button id="topHeaderButton" on-click="{{onButtonClick}}">{{title}}</button>
+   
+    <div id="contentDiv">
+      <template if="{{showView}}">
+        <content></content>
+      </template>
+    </div>
+  
+  </template>
+  
+  <script type="application/dart" src="accordion_view.dart"></script>  
+</polymer-element>

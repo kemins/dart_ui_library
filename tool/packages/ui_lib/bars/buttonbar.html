@@ -1,0 +1,28 @@
+<polymer-element name="button-bar">
+  
+  <template>
+    <style>
+    @host {
+      :scope {
+      }
+    }
+    
+    span {
+    }
+    
+    button {
+    }
+    
+    </style>
+    
+    <span>
+      <template bind repeat="{{item in dataProvider}}">
+        <button on-click="{{onButtonClick}}" value="{{item.value}}">{{item.label}}</button>
+      </template>
+    </span>
+    
+  </template>
+  
+  <script type="application/dart" src="button_bar.dart"></script>
+  
+</polymer-element>

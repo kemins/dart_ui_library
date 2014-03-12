@@ -1,0 +1,28 @@
+<polymer-element name="button-bar-view">
+  
+  
+  <link rel="import" href="packages/ui_lib/bars/buttonbar.html">
+    
+  <template>
+    <style>
+    @host {
+      :scope {
+    }
+    
+    </style>
+    
+    <template if="{{showView}}">
+      <h5>Button Bar</h5>
+      
+      <button-bar dataProvider="{{dataProvider}}" on-button-click="{{onButtonClick}}"></button-bar>
+      
+      <div>
+        <h5>Clicked Button: {{selectedValue}}</h5>
+      </div>
+    </template>
+    
+  </template>
+  
+  <script type="application/dart" src="button_bar_view.dart"></script>
+  
+</polymer-element>

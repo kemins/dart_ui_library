@@ -1,0 +1,18 @@
+body {
+  background-color: #F8F8F8;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.2em;
+  margin: 15px;
+}
+
+ #popupOverlay {
+  width: 100%;
+  left: 0px;
+  top: 0px;
+  height: 100%;
+  position: absolute;
+  pointer-events: none;
+  z-index: 999;
+}

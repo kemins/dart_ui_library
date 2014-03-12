@@ -1,0 +1,51 @@
+<polymer-element name="list-selector">
+  
+  <link rel="stylesheet" href="selectors.css">
+  <link rel="stylesheet" href="list_selector.css">
+  
+  <template>
+  
+    <style>
+    @host {
+    }
+    
+    </style>
+
+     <div id="mainHolder" class="resizableBox">
+     
+     <template if="{{showTopControlPanel}}">
+      <div class="top-control-panel">
+        <template if="{{multiSelectAllowed}}">
+          <label>
+            <input class="selectAllCheckBox" type="checkbox" checked="{{allSelected}}"/>Select All
+          </label>
+        </template>
+          
+        <template if="{{!multiSelectAllowed}}"> 
+          <label class="unselectLabel" on-click="{{unselectAll}}">
+            Unselect
+          </label>
+        </template>  
+      </div>
+     </template>
+      
+      <template repeat="{{item in dataProvider}}">
+        
+        <label class="itemRow truncate">
+          <template if="{{multiSelectAllowed}}">
+            <input type="checkbox" checked="{{item.selected}}" value="{{item.value}}"/><span>{{item.label}}</span>
+          </template>
+          <template if="{{!multiSelectAllowed}}">
+            <input type="radio" name="{{radioGroupName}}" checked="{{item.selected}}" value="{{item.value}}"/><span>{{item.label}}</span>
+          </template>
+        </label>
+         
+      </template>
+     
+     </div>
+      
+  </template>
+  
+  <script type="application/dart" src="list_selector.dart"></script>
+  
+</polymer-element>

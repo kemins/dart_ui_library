@@ -1,0 +1,26 @@
+#childrenDiv{
+  overflow: hidden;
+  padding-left: 25px;
+}
+
+.node, .open-node, .close-node  {
+  position: relative;
+  cursor: pointer;
+  float: left;
+}
+
+.open-node {
+  top: 5px;
+  left: 5px;
+  margin-right: 3px;
+}
+
+.close-node {
+  top: 3px;
+  left: 5px;
+  margin-right: 7px;
+}
+
+.emptyNode {
+  visibility: hidden;
+}

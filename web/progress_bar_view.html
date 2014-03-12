@@ -1,0 +1,38 @@
+<polymer-element name="progress-bar-view">
+  
+  <link rel="import" href="packages/ui_lib/bars/progress_bar.html">
+    
+  <template>
+    <style>
+      @host {
+        :scope {
+          
+        }
+      }
+      
+    </style>
+    
+    <template if="{{showView}}">
+      <h5>Progress Bar</h5>
+      
+       <label>
+          Progress Total:
+          <input type="number" step="1" min="0" max="1000" value="{{progressTotalStr}}"/>
+        </label>
+        <label>
+          Progress Current:
+          <input type="number" step="1" min="0" max="1000" value="{{progressCurrentStr}}"/>
+        </label>
+       <progress-bar total="{{progressTotal}}" current="{{progressCurrent}}" width="250" fillColors="['#9163ab', '#c6a0de', '#9163ab']" strokeColors="['#d9d9ec', '#ffffff', '#d9d9ec']"></progress-bar>
+       <progress-bar total="100" current="40" width="250" fillColors="['#f6d257', '#ffeca9', '#f6d257']" strokeColors="['#d9d9ec', '#ffffff', '#d9d9ec']"></progress-bar>
+       <progress-bar total="100" current="50" width="250" fillColors="['#0068a7', '#50b3eb', '#0068a7']" strokeColors="['#d9d9ec', '#ffffff', '#d9d9ec']"></progress-bar>
+       <progress-bar total="100" current="70" width="250" fillColors="['#028dd4', '#79c9f2', '#028dd4']" strokeColors="['#d9d9ec', '#ffffff', '#d9d9ec']"></progress-bar>
+       <progress-bar total="100" current="100" width="250" fillColors="['#ffc423', '#fde09b', '#ffc423']" strokeColors="['#d9d9ec', '#ffffff', '#d9d9ec']"></progress-bar>
+     
+    </template>
+  
+  </template>
+  
+  <script type="application/dart" src="progress_bar_view.dart"></script>
+  
+</polymer-element>
