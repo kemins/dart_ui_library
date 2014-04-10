@@ -34840,3 +34840,218 @@ build.dart --machine --changed=web\test_view.dart
 
 build.dart finished [2308 ms]
 
+---
+build.dart --machine --full
+
+build.dart finished [7512 ms]
+
+---
+build.dart --machine --full
+
+build.dart finished [3605 ms]
+
+---
+build.dart --machine --removed=build\test\test.html
+
+build.dart finished [3076 ms]
+
+---
+build.dart --machine --removed=build\test\main.dart.js --removed=build\test\main.dart.js.map --removed=build\te...
+
+build.dart finished [2495 ms]
+
+---
+build.dart --machine --changed=build\test\main.dart --changed=build\test\main.dart.js --changed=build\test\main...
+
+build.dart finished [2464 ms]
+
+---
+build.dart --machine --changed=lib\ui_lib.dart
+
+build.dart finished [2721 ms]
+
+---
+build.dart --machine --changed=lib\common\animation_utils.dart
+
+build.dart finished [2073 ms]
+
+---
+build.dart --machine --changed=lib\ui_lib.dart
+
+build.dart finished [2079 ms]
+
+---
+build.dart --machine --changed=lib\common\animation_utils.dart
+
+build.dart finished [2187 ms]
+
+---
+build.dart --machine --changed=lib\common\animation_utils.dart
+
+build.dart finished [2179 ms]
+
+---
+build.dart --machine --changed=lib\common\animation_utils.dart
+
+build.dart finished [2052 ms]
+
+---
+build.dart --machine --changed=lib\common\animation_utils.dart
+
+build.dart finished [2152 ms]
+
+---
+build.dart --machine --changed=lib\common\animation_utils.dart
+
+build.dart finished [2073 ms]
+
+---
+build.dart --machine --removed=build\test\main.dart --removed=build\test\main.dart.js --removed=build\test\main...
+
+build.dart finished [2038 ms]
+
+---
+build.dart --machine --removed=build\web\test.html_bootstrap.dart.precompiled.js --removed=build\web\test_view....
+
+build.dart finished [2556 ms]
+
+---
+build.dart --machine --changed=build\test\main.dart --changed=build\test\main.dart.js --changed=build\test\main...
+
+build.dart finished [3542 ms]
+
+---
+build.dart --machine --changed=lib\ui_lib.dart
+
+build.dart finished [2147 ms]
+
+---
+build.dart --machine --changed=lib\common\animation_utils.dart
+
+build.dart finished [2085 ms]
+
+---
+build.dart --machine --changed=lib\common\animation_utils.dart
+
+build.dart finished [2059 ms]
+
+---
+build.dart --machine --changed=lib\common\animation_utils.dart
+
+build.dart finished [2071 ms]
+
+---
+build.dart --machine --changed=lib\common\animation_utils.dart
+
+build.dart finished [2079 ms]
+
+---
+build.dart --machine --changed=lib\common\animation_utils.dart
+
+build.dart finished [2113 ms]
+
+---
+build.dart --machine --changed=lib\common\animation_utils.dart
+
+build.dart finished [2069 ms]
+
+---
+build.dart --machine --changed=lib\ui_lib.dart
+
+build.dart finished [2144 ms]
+
+---
+build.dart --machine --changed=lib\ui_lib.dart
+
+build.dart finished [2236 ms]
+
+---
+build.dart --machine --full
+
+build.dart finished [4497 ms]
+
+---
+build.dart --machine --full
+
+build.dart finished [3490 ms]
+
+---
+build.dart --machine --changed=lib\navigators\accordion.dart
+
+build.dart finished [2196 ms]
+
+---
+build.dart --machine --changed=lib\navigators\accordion.dart
+
+build.dart finished [2254 ms]
+
+---
+build.dart --machine --changed=lib\navigators\accordion.dart
+
+build.dart finished [2118 ms]
+
+---
+build.dart --machine --changed=lib\navigators\accordion.dart
+
+build.dart finished [2237 ms]
+
+---
+build.dart --machine --changed=lib\navigators\accordion.dart
+
+build.dart finished [2280 ms]
+
+---
+build.dart --machine --changed=lib\navigators\accordion.dart
+
+build.dart finished [2255 ms]
+
+---
+build.dart --machine --clean
+
+build.dart finished [2081 ms]
+
+---
+build.dart --machine --full
+
+build.dart finished [2092 ms]
+
+---
+build.dart --machine --full
+
+build.dart finished [3445 ms]
+
+---
+build.dart --machine --full
+
+build.dart finished [3313 ms]
+
+---
+build.dart --machine --changed=lib\selectors\tree_dropdown.html
+
+build.dart finished [2271 ms]
+
+---
+build.dart --machine --changed=lib\selectors\multi_select_dropdown.html
+
+build.dart finished [2136 ms]
+
+---
+build.dart --machine --changed=lib\navigators\accordion.dart
+
+build.dart finished [2277 ms]
+
+---
+build.dart --machine --changed=web\test_view.dart
+
+build.dart finished [2159 ms]
+
+---
+build.dart --machine --changed=web\test_view.dart
+
+build.dart finished [2058 ms]
+
+---
+build.dart --machine --changed=web\test_view.dart
+
+build.dart finished [2114 ms]
+

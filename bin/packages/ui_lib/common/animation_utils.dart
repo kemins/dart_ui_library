@@ -17,7 +17,7 @@ class ExpandCollapseAnimator {
                       'margin-top': 0
     };
     
-    _animation = animate(target, duration: animationDuration, properties: properties);
+    _animation = animator.animate(target, duration: animationDuration, properties: properties);
     _animationStreamSubscription = _animation.onComplete.listen(_onExpandAnimationComplete);
   }
   
@@ -28,7 +28,7 @@ class ExpandCollapseAnimator {
                       'margin-top': -_targetDivHeigh
      };
     
-    _animation = animate(target, duration: animationDuration, properties: properties);
+    _animation = animator.animate(target, duration: animationDuration, properties: properties);
     _animationStreamSubscription = _animation.onComplete.listen(_onCollapseAnimationComplete);
   }
   
@@ -58,7 +58,7 @@ class ExpandCollapseAnimator {
   
   num get _targetDivHeigh => target.getBoundingClientRect().height;
   
-  Animation _animation;
+  animator.Animation _animation;
     
   StreamSubscription _animationStreamSubscription;
     
@@ -83,7 +83,7 @@ class MoveAnimator {
   
   int animationDuration = 300; //ms
   
-  Animation animation;
+  animator.Animation animation;
   
   StreamSubscription animationStreamSubscription;
      
@@ -120,7 +120,7 @@ class MoveAnimator {
      
      resetTargetState();
      
-     animation = animate(target, duration: animationDuration, properties: anumationProperties);
+     animation = animator.animate(target, duration: animationDuration, properties: anumationProperties);
      animationStreamSubscription = animation.onComplete.listen(_onAnimationComplete);
    }
 }

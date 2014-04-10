@@ -4,7 +4,7 @@ import 'dart:html';
 import "package:observe/observe.dart";
 
 import 'package:polymer/polymer.dart';
-import 'package:animation/animation.dart';
+import 'package:animation/animation.dart' as animator;
 
 import 'dart:async';
 

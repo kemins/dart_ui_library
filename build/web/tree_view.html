@@ -1,0 +1,60 @@
+<polymer-element name="tree-view">
+  
+  
+  <link rel="import" href="packages/ui_lib/selectors/tree_selector.html">
+  <link rel="import" href="packages/ui_lib/selectors/tree_selector_adv.html">
+    
+  <template>
+    <style>
+    @host {
+      :scope {
+    }
+    
+    </style>
+    
+    <template if="{{showView}}">
+      <h5>Tree</h5>
+      
+      <div style="float: left;">
+      
+        <!--
+        <tree-selector-adv 
+                         dataProvider="{{treeSelectorItems}}" 
+                         selectedValues="{{treeSelectedValues}}" 
+                         width="300px" 
+                         height="300px">
+          </tree-selector-adv>
+         -->
+        <tree-selector id="tree" 
+                       dataProvider="{{treeSelectorItems}}" 
+                       selectedValues="{{treeSelectedValues}}" 
+                       width="300px" 
+                       height="300px"
+                       on-selection-change={{onTreeSelectionChange}}>
+        </tree-selector>
+      </div>
+      
+      <!--
+      <div>
+        <label>
+          Selected values:
+          <template repeat="{{item in treeSelectedValues}}">
+            {{item}};
+          </template>
+        </label>
+      </div>
+      -->
+      
+      <div>
+        <h5>Selected Items:</h5>
+        <template repeat="{{item in treeSelectedItems}}">
+          {{item.label}};
+        </template>
+      </div>
+    </template>
+    
+  </template>
+  
+  <script type="application/dart" src="tree_view.dart"></script>
+  
+</polymer-element>

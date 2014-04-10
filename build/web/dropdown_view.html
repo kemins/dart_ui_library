@@ -1,0 +1,62 @@
+<polymer-element name="dropdown-view">
+  
+  
+  <link rel="import" href="packages/ui_lib/selectors/multi_select_dropdown.html">
+  <link rel="import" href="packages/ui_lib/selectors/tree_dropdown.html">
+    
+  <template>
+    <style>
+    @host {
+      :scope {
+      
+      ect DropDown
+
+
+    }
+    
+    </style>
+    
+    <template if="{{showView}}">
+      <div style="float: left; width: 50%">
+        <div><h5>Multi Select DropDown</h5></div>
+        
+            <multi-select-dropdown id="multiSelector"
+                           dataProvider="{{multiselectorItems}}" 
+                           selectedValues="{{multiselectorSelectedValues}}" 
+                           dropDownWidth="200px" 
+                           dropDownHeight="210px">
+            </multi-select-dropdown>
+        
+        <div>
+          <h5>Selected Items:</h5>
+          <template repeat="{{item in multiselectorSelectedItems}}">
+            {{item.label}};
+          </template>
+        </div>
+        
+      </div>
+      
+      <div>
+        <div><h5>Tree DropDown</h5></div>
+        <tree-dropdown id="treeSelector" 
+                       dataProvider="{{treeItems}}"
+                       selectedValues="{{treeSelectedValues}}"
+                       dropDownWidth="200px" 
+                       dropDownHeight="210px">
+         </tree-dropdown>
+         
+         <div>
+          <h5>Selected Items:</h5>
+          <template repeat="{{item in treeSelectedItems}}">
+            {{item.label}};
+          </template>
+        </div>
+      </div>
+    </template>
+    
+   
+  </template>
+  
+  <script type="application/dart" src="dropdown_view.dart"></script>
+  
+</polymer-element>
