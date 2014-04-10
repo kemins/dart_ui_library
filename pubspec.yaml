@@ -1,7 +1,9 @@
 name: ui_lib
-version: 1.0.0
+version: 1.0.1
 author: Andrriy Kemin
 description: A UI library app.
+environment:
+  sdk: 1.3.0
 documentation: Small UI Library based on Polymer
 dependencies:
   animation: any
