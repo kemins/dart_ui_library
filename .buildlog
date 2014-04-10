@@ -35055,3 +35055,8 @@ build.dart --machine --changed=web\test_view.dart
 
 build.dart finished [2114 ms]
 
+---
+build.dart --machine --changed=pubspec.yaml
+
+build.dart finished [3416 ms]
+
