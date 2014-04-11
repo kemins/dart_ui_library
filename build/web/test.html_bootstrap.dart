@@ -21,8 +21,9 @@ import 'progress_bar_view.dart' as i15;
 import 'package:ui_lib/navigators/accordion.dart' as i16;
 import 'package:ui_lib/navigators/accordion_view.dart' as i17;
 import 'accordion_test_view.dart' as i18;
-import 'test_view.dart' as i19;
-import 'main.dart' as i20;
+import 'widget_example_view.dart' as i19;
+import 'test_view.dart' as i20;
+import 'main.dart' as i21;
 
 void main() {
   configureForDeployment([
@@ -45,8 +46,9 @@ void main() {
       'package:ui_lib/navigators/accordion.dart',
       'package:ui_lib/navigators/accordion_view.dart',
       'accordion_test_view.dart',
+      'widget_example_view.dart',
       'test_view.dart',
       'main.dart',
     ]);
-  i20.main();
+  i21.main();
 }

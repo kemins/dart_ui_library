@@ -353,10 +353,11 @@
   
 </polymer-element><polymer-element name="multi-select-dropdown">
   
+  <link rel="stylesheet" href="packages/ui_lib/selectors/selectors.css">
+  <link rel="stylesheet" href="packages/ui_lib/selectors/dropdown_selector.css">
+  
   <template>
   
-    <link rel="stylesheet" href="packages/ui_lib/selectors/selectors.css">
-    <link rel="stylesheet" href="packages/ui_lib/selectors/dropdown_selector.css">
     
     <link rel="import" href="packages/ui_lib/selectors/list_selector.html">
     
@@ -395,10 +396,11 @@
   
 </polymer-element><polymer-element name="tree-dropdown">
   
+  <link rel="stylesheet" href="packages/ui_lib/selectors/selectors.css">
+  <link rel="stylesheet" href="packages/ui_lib/selectors/dropdown_selector.css">
+  
   <template>
   
-    <link rel="stylesheet" href="packages/ui_lib/selectors/selectors.css">
-    <link rel="stylesheet" href="packages/ui_lib/selectors/dropdown_selector.css">
     
     <link rel="import" href="packages/ui_lib/selectors/tree_selector_adv.html">
     
@@ -858,6 +860,30 @@
   
   
   
+</polymer-element><polymer-element name="widget-view">
+  
+  
+    
+  <template>
+    <style>
+    @host {
+      :scope {
+    }
+    
+    div {
+      float: left;
+    }
+    
+    </style>
+    
+    <template if="{{showView}}">
+      <iframe src="{{src}}" width="100%" height="100%" style="overflow: visible;"></iframe>
+    </template>
+    
+  </template>
+  
+  
+  
 </polymer-element><polymer-element name="test-view">
   
   
@@ -872,6 +898,8 @@
   <link rel="import" href="view_stack_view.html">
   <link rel="import" href="progress_bar_view.html">
   <link rel="import" href="accordion_test_view.html">
+  <link rel="import" href="widget_view.html">
+  
     
   <template>
     <style>
@@ -883,7 +911,7 @@
     
     list-selector-view, dropdown-view, 
     tree-view, button-bar-view, view-stack-test-view,
-    progress-bar-view, accordion-test-view{
+    progress-bar-view, accordion-test-view, widget-view{
       background-color: #ffffff;
       padding: 10px;
       width: calc(100% - 22px);
@@ -893,16 +921,50 @@
       border-width: 1px;
     }
     
+    @MEDIA screen and (max-width: 1023px) {
+      .leftPanel {
+        width: 100%;
+        min-width: 720px;
+        height: auto;
+        padding: 5px;
+        position: relative;
+        left: -5px;
+      }
+      
+      .rightPanel {
+        width: 100%;
+        height: 480px;
+        min-width: 720px;
+      }
+    }
+    
+    @MEDIA screen and (min-width: 1024px) {
+      .leftPanel {
+        position: relative;
+        top: -5px;
+        float: left;
+        width: 200px;
+        height: 480px;
+        padding: 5px;
+      }
+      
+      .rightPanel {
+        width: calc(100% - 250px);
+        height: 480px;
+        float: right;
+      }
+    }
+    
     </style>
     
-    <div style="float: left; padding-right: 5px">
-      <list-selector id="menu" dataprovider="{{menuItems}}" width="200px" height="498px" multiselectallowed="false" showtopcontrolpanel="false">
+    <div class="leftPanel">
+      <list-selector id="menu" dataprovider="{{menuItems}}" width="100%" height="100%" multiselectallowed="false" showtopcontrolpanel="false">
       </list-selector>
      </div>
      
      
-    <div>
-      <view-stack id="viewStack" width="800px" height="500px" selectedindex="{{selectedIndex}}">
+    <div class="rightPanel">
+      <view-stack id="viewStack" width="100%" height="100%" selectedindex="{{selectedIndex}}">
         
   
         <list-selector-view></list-selector-view>
@@ -912,6 +974,7 @@
         <view-stack-test-view></view-stack-test-view>
         <progress-bar-view></progress-bar-view>
         <accordion-test-view></accordion-test-view>
+        <widget-view></widget-view>
         
       </view-stack>
      

@@ -35070,3 +35070,504 @@ build.dart --machine --changed=pubspec.yaml
 
 build.dart finished [3173 ms]
 
+---
+build.dart --machine --removed=build\test\main.dart --removed=build\test\main.dart.js --removed=build\test\main...
+
+build.dart finished [2627 ms]
+
+---
+build.dart --machine --changed=build\test\main.dart --changed=build\test\main.dart.js --changed=build\test\main...
+
+build.dart finished [2345 ms]
+
+---
+build.dart --machine --changed=web\test_view.dart
+
+build.dart finished [2203 ms]
+
+---
+build.dart --machine --changed=web\test_view.dart
+
+build.dart finished [2084 ms]
+
+---
+build.dart --machine --changed=web\widget_example_view.dart
+
+build.dart finished [2224 ms]
+
+---
+build.dart --machine --changed=web\widget_example_view.dart
+
+build.dart finished [2082 ms]
+
+---
+build.dart --machine --changed=web\widget_example_view.dart
+
+build.dart finished [2035 ms]
+
+---
+build.dart --machine --changed=web\widget_example_view.dart
+
+build.dart finished [2162 ms]
+
+---
+build.dart --machine --changed=web\widget_example_view.dart
+
+build.dart finished [2057 ms]
+
+---
+build.dart --machine --changed=web\widget_view.html
+
+build.dart finished [2169 ms]
+
+---
+build.dart --machine --changed=web\widget_view.html
+
+build.dart finished [2145 ms]
+
+---
+build.dart --machine --changed=web\widget_view.html
+
+build.dart finished [2234 ms]
+
+---
+build.dart --machine --changed=web\widget_view.html
+
+build.dart finished [2107 ms]
+
+---
+build.dart --machine --changed=web\widget_view.html
+
+build.dart finished [2165 ms]
+
+---
+build.dart --machine --changed=web\widget_view.html
+
+build.dart finished [2219 ms]
+
+---
+build.dart --machine --changed=web\test_view.html
+[{"method":"error","params":{"file":"web/test_view.html","message":"couldn't find imported asset \"web/widget-view.html\" in package \"ui_lib\".","line":15,"charStart":560,"charEnd":603}}]
+build failed with errors: {Transform polymer (Linter) on ui_lib|web/test_view.html threw error: couldn't find imported asset "web/widget-view.html" in package "ui_lib".}
+build.dart finished [2059 ms]
+
+---
+build.dart --machine --changed=web\test_view.html
+
+build.dart finished [2099 ms]
+
+---
+build.dart --machine --changed=web\test_view.html
+
+build.dart finished [2036 ms]
+
+---
+build.dart --machine --changed=web\widget_view.html
+
+build.dart finished [2166 ms]
+
+---
+build.dart --machine --changed=web\widget_view.html
+
+build.dart finished [2143 ms]
+
+---
+build.dart --machine --changed=web\test_view.html
+
+build.dart finished [2732 ms]
+
+---
+build.dart --machine --changed=web\test_view.html
+
+build.dart finished [2060 ms]
+
+---
+build.dart --machine --changed=web\widget_example_view.dart
+
+build.dart finished [2138 ms]
+
+---
+build.dart --machine --changed=web\widget_view.html
+[{"method":"warning","params":{"file":"web/widget_view.html","message":"Unexpected end tag (polymer-element). Ignored.","line":17,"charStart":215,"charEnd":233}}]
+[{"method":"warning","params":{"file":"web/widget_view.html","message":"Unexpected end tag (polymer-element). Ignored.","line":17,"charStart":215,"charEnd":233}}]
+[{"method":"warning","params":{"file":"web/widget_view.html","message":"Unexpected end tag (polymer-element). Ignored.","line":17,"charStart":215,"charEnd":233}}]
+build.dart finished [2685 ms]
+
+---
+build.dart --machine --changed=web\widget_view.html
+
+build.dart finished [2375 ms]
+
+---
+build.dart --machine --changed=web\widget_example_view.dart
+
+build.dart finished [2141 ms]
+
+---
+build.dart --machine --changed=web\test_view.html
+
+build.dart finished [2650 ms]
+
+---
+build.dart --machine --changed=web\test_view.html
+
+build.dart finished [2067 ms]
+
+---
+build.dart --machine --changed=web\test_view.html
+
+build.dart finished [2456 ms]
+
+---
+build.dart --machine --changed=web\widget_view.html
+
+build.dart finished [2221 ms]
+
+---
+build.dart --machine --changed=web\widget_view.html
+
+build.dart finished [2145 ms]
+
+---
+build.dart --machine --changed=web\widget_view.html
+
+build.dart finished [2185 ms]
+
+---
+build.dart --machine --changed=web\index.html
+
+build.dart finished [2324 ms]
+
+---
+build.dart --machine --changed=web\widget.html --removed=web\index.html
+
+build.dart finished [2224 ms]
+
+---
+build.dart --machine --changed=web\widget_view.html
+
+build.dart finished [2270 ms]
+
+---
+build.dart --machine --changed=web\widget_view.html
+[{"method":"warning","params":{"file":"web/widget_view.html","message":"Unexpected character after attribute value.","line":19,"charStart":239,"charEnd":299}}]
+[{"method":"warning","params":{"file":"web/widget_view.html","message":"Invalid character in attribute name","line":19,"charStart":239,"charEnd":303}}]
+[{"method":"warning","params":{"file":"web/widget_view.html","message":"Unexpected character after attribute value.","line":19,"charStart":239,"charEnd":318}}]
+[{"method":"warning","params":{"file":"web/widget_view.html","message":"Invalid character in attribute name","line":19,"charStart":239,"charEnd":318}}]
+[{"method":"warning","params":{"file":"web/widget_view.html","message":"Unexpected character after attribute value.","line":19,"charStart":239,"charEnd":299}}]
+[{"method":"warning","params":{"file":"web/widget_view.html","message":"Invalid character in attribute name","line":19,"charStart":239,"charEnd":303}}]
+[{"method":"warning","params":{"file":"web/widget_view.html","message":"Unexpected character after attribute value.","line":19,"charStart":239,"charEnd":318}}]
+[{"method":"warning","params":{"file":"web/widget_view.html","message":"Invalid character in attribute name","line":19,"charStart":239,"charEnd":318}}]
+[{"method":"warning","params":{"file":"web/widget_view.html","message":"Unexpected character after attribute value.","line":19,"charStart":239,"charEnd":299}}]
+[{"method":"warning","params":{"file":"web/widget_view.html","message":"Invalid character in attribute name","line":19,"charStart":239,"charEnd":303}}]
+[{"method":"warning","params":{"file":"web/widget_view.html","message":"Unexpected character after attribute value.","line":19,"charStart":239,"charEnd":318}}]
+[{"method":"warning","params":{"file":"web/widget_view.html","message":"Invalid character in attribute name","line":19,"charStart":239,"charEnd":318}}]
+build.dart finished [2161 ms]
+
+---
+build.dart --machine --changed=web\widget_view.html
+
+build.dart finished [2089 ms]
+
+---
+build.dart --machine --changed=web\widget_view.html
+
+build.dart finished [2118 ms]
+
+---
+build.dart --machine --changed=web\test_view.html
+
+build.dart finished [2612 ms]
+
+---
+build.dart --machine --changed=web\widget_example_view.dart
+
+build.dart finished [2188 ms]
+
+---
+build.dart --machine --changed=web\widget_example_view.dart
+
+build.dart finished [2310 ms]
+
+---
+build.dart --machine --changed=web\widget_view.html
+
+build.dart finished [2197 ms]
+
+---
+build.dart --machine --changed=web\widget_example_view.dart
+
+build.dart finished [2154 ms]
+
+---
+build.dart --machine --changed=web\widget_example_view.dart
+
+build.dart finished [2027 ms]
+
+---
+build.dart --machine --changed=web\widget_example_view.dart
+
+build.dart finished [2417 ms]
+
+---
+build.dart --machine --changed=web\widget_view.html
+[{"method":"warning","params":{"file":"web/widget_view.html","message":"End tag (h5) seen too early. Expected other end tag.","line":20,"charStart":260,"charEnd":265}}]
+[{"method":"warning","params":{"file":"web/widget_view.html","message":"End tag (h5) seen too early. Expected other end tag.","line":20,"charStart":260,"charEnd":265}}]
+[{"method":"warning","params":{"file":"web/widget_view.html","message":"End tag (h5) seen too early. Expected other end tag.","line":20,"charStart":260,"charEnd":265}}]
+build.dart finished [2130 ms]
+
+---
+build.dart --machine --changed=web\widget_view.html
+
+build.dart finished [2724 ms]
+
+---
+build.dart --machine --changed=web\widget_view.html
+
+build.dart finished [2479 ms]
+
+---
+build.dart --machine --changed=web\test_view.html
+
+build.dart finished [2114 ms]
+
+---
+build.dart --machine --changed=web\test_view.html
+
+build.dart finished [2131 ms]
+
+---
+build.dart --machine --changed=web\test_view.html
+
+build.dart finished [2096 ms]
+
+---
+build.dart --machine --changed=web\test_view.html
+
+build.dart finished [2085 ms]
+
+---
+build.dart --machine --changed=web\test_view.html
+
+build.dart finished [2393 ms]
+
+---
+build.dart --machine --changed=web\test_view.html
+
+build.dart finished [2613 ms]
+
+---
+build.dart --machine --changed=web\test_view.html
+
+build.dart finished [2554 ms]
+
+---
+build.dart --machine --changed=web\test_view.html
+
+build.dart finished [2339 ms]
+
+---
+build.dart --machine --changed=web\test_view.html
+
+build.dart finished [2628 ms]
+
+---
+build.dart --machine --changed=web\test_view.html
+
+build.dart finished [2902 ms]
+
+---
+build.dart --machine --changed=web\test_view.html
+
+build.dart finished [2865 ms]
+
+---
+build.dart --machine --changed=web\test_view.html
+
+build.dart finished [2288 ms]
+
+---
+build.dart --machine --changed=web\test_view.html
+
+build.dart finished [2847 ms]
+
+---
+build.dart --machine --changed=web\test_view.html
+
+build.dart finished [2202 ms]
+
+---
+build.dart --machine --changed=web\test_view.html
+
+build.dart finished [2040 ms]
+
+---
+build.dart --machine --changed=web\test_view.html
+
+build.dart finished [2807 ms]
+
+---
+build.dart --machine --changed=web\test_view.html
+
+build.dart finished [2678 ms]
+
+---
+build.dart --machine --changed=web\test_view.html
+
+build.dart finished [2216 ms]
+
+---
+build.dart --machine --changed=web\test_view.html
+
+build.dart finished [2738 ms]
+
+---
+build.dart --machine --changed=web\test_view.html
+
+build.dart finished [2096 ms]
+
+---
+build.dart --machine --changed=web\test_view.html
+
+build.dart finished [2069 ms]
+
+---
+build.dart --machine --changed=web\test_view.html
+
+build.dart finished [2213 ms]
+
+---
+build.dart --machine --changed=web\test_view.html
+
+build.dart finished [2445 ms]
+
+---
+build.dart --machine --changed=web\test_view.html
+
+build.dart finished [2513 ms]
+
+---
+build.dart --machine --changed=web\test_view.html
+
+build.dart finished [2685 ms]
+
+---
+build.dart --machine --changed=web\test_view.html
+
+build.dart finished [2588 ms]
+
+---
+build.dart --machine --changed=web\test_view.html
+
+build.dart finished [2702 ms]
+
+---
+build.dart --machine --changed=web\test_view.html
+
+build.dart finished [2393 ms]
+
+---
+build.dart --machine --changed=web\test_view.html
+
+build.dart finished [2818 ms]
+
+---
+build.dart --machine --changed=web\test_view.html
+
+build.dart finished [2104 ms]
+
+---
+build.dart --machine --changed=web\test_view.html
+
+build.dart finished [2281 ms]
+
+---
+build.dart --machine --changed=web\test_view.html
+
+build.dart finished [2043 ms]
+
+---
+build.dart --machine --changed=web\test_view.html
+
+build.dart finished [2875 ms]
+
+---
+build.dart --machine --changed=web\test_view.html
+
+build.dart finished [2061 ms]
+
+---
+build.dart --machine --changed=web\test_view.html
+
+build.dart finished [3554 ms]
+
+---
+build.dart --machine --changed=web\test_view.html
+
+build.dart finished [3121 ms]
+
+---
+build.dart --machine --changed=web\test_view.html
+
+build.dart finished [2087 ms]
+
+---
+build.dart --machine --changed=web\test_view.html
+
+build.dart finished [2686 ms]
+
+---
+build.dart --machine --changed=web\test_view.html
+
+build.dart finished [2421 ms]
+
+---
+build.dart --machine --changed=web\test_view.html
+
+build.dart finished [2245 ms]
+
+---
+build.dart --machine --changed=web\test_view.html
+
+build.dart finished [2445 ms]
+
+---
+build.dart --machine --removed=build\test\main.dart --removed=build\test\main.dart.js --removed=build\test\main...
+
+build.dart finished [2198 ms]
+
+---
+build.dart --machine --changed=build\test\main.dart --changed=build\test\main.dart.js --changed=build\test\main...
+
+build.dart finished [9515 ms]
+
+---
+build.dart --machine --changed=build\test\main.dart --changed=build\test\main.dart.js --changed=build\test\main...
+
+build.dart finished [2303 ms]
+
+---
+build.dart --machine --changed=web\widget.html
+
+build.dart finished [2925 ms]
+
+---
+build.dart --machine --changed=web\widget.html
+
+build.dart finished [2172 ms]
+
+---
+build.dart --machine --changed=web\index.html --removed=web\test.html
+
+build.dart finished [2335 ms]
+
+---
+build.dart --machine --full
+
+build.dart finished [4583 ms]
+
+---
+build.dart --machine --changed=pubspec.yaml
+
+build.dart finished [3427 ms]
+

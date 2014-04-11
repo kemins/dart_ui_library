@@ -53,6 +53,8 @@ class TestView extends PolymerElement{
     menuItems.add(item);
     item = new MenuItem('6', "Accordion");
     menuItems.add(item);
+    item = new MenuItem('7', "Widget Example");
+    menuItems.add(item);
   }
   
   void onMenuChange() {

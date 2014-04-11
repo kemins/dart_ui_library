@@ -6,6 +6,7 @@ import "dart:html";
 
 import "package:ui_lib/selectors/list_selector.dart" as selectors;
 
+
 @CustomTag('test-view')
 class TestView extends PolymerElement with ChangeNotifier {
 
@@ -51,6 +52,8 @@ class TestView extends PolymerElement with ChangeNotifier {
     item = new MenuItem('5', "Progress Bar");
     menuItems.add(item);
     item = new MenuItem('6', "Accordion");
+    menuItems.add(item);
+    item = new MenuItem('7', "Widget Example");
     menuItems.add(item);
   }
   
