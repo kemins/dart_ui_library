@@ -14,7 +14,10 @@
     <template if="{{showView}}">
       <h5>Button Bar</h5>
       
-      <button-bar dataProvider="{{dataProvider}}" on-button-click="{{onButtonClick}}"></button-bar>
+      <button-bar dataProvider="{{dataProvider}}" on-button-click="{{onButtonClick}}" 
+        buttonClass="button blue bigrounded"
+        selectedButtonClass="button orange bigrounded">
+       </button-bar>
       
       <div>
         <h5>Clicked Button: {{selectedValue}}</h5>

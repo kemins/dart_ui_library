@@ -35571,3 +35571,253 @@ build.dart --machine --changed=pubspec.yaml
 
 build.dart finished [3427 ms]
 
+---
+build.dart --machine --full
+
+build.dart finished [4215 ms]
+
+---
+build.dart --machine --full
+
+build.dart finished [3312 ms]
+
+---
+build.dart --machine --changed=pubspec.yaml
+[{"method":"warning","params":{"file":"lib/polymer_ui_menu_button/polymer_ui_menu_button.html","message":"definition for Polymer element with tag name \"polymer-overlay\" not found.","line":33,"charStart":2303,"charEnd":2366}}]
+build.dart finished [8869 ms]
+
+---
+build.dart --machine --changed=pubspec.yaml
+
+build.dart finished [3090 ms]
+
+---
+build.dart --machine --changed=lib\bars\button_bar.dart
+
+build.dart finished [2579 ms]
+
+---
+build.dart --machine --changed=lib\bars\buttonbar.html
+
+build.dart finished [2264 ms]
+
+---
+build.dart --machine --changed=lib\bars\button_bar.dart
+
+build.dart finished [2371 ms]
+
+---
+build.dart --machine --changed=web\buttons.css
+
+build.dart finished [2539 ms]
+
+---
+build.dart --machine --changed=web\index.html
+
+build.dart finished [2318 ms]
+
+---
+build.dart --machine --changed=web\index.html
+
+build.dart finished [2300 ms]
+
+---
+build.dart --machine --changed=web\button_bar_view.html
+
+build.dart finished [2259 ms]
+
+---
+build.dart --machine --changed=web\button_bar_view.html
+
+build.dart finished [2460 ms]
+
+---
+build.dart --machine --changed=lib\bars\buttonbar.html
+
+build.dart finished [2751 ms]
+
+---
+build.dart --machine --changed=lib\bars\buttonbar.html
+
+build.dart finished [2330 ms]
+
+---
+build.dart --machine --changed=lib\bars\button_bar.dart
+
+build.dart finished [2344 ms]
+
+---
+build.dart --machine --changed=lib\bars\buttonbar.html
+
+build.dart finished [3254 ms]
+
+---
+build.dart --machine --changed=lib\bars\buttonbar.html
+
+build.dart finished [2440 ms]
+
+---
+build.dart --machine --changed=lib\bars\button_bar.dart
+
+build.dart finished [2533 ms]
+
+---
+build.dart --machine --changed=lib\bars\button_bar.dart
+
+build.dart finished [2353 ms]
+
+---
+build.dart --machine --changed=lib\bars\button_bar.dart
+
+build.dart finished [2342 ms]
+
+---
+build.dart --machine --changed=lib\bars\button_bar.dart
+
+build.dart finished [2731 ms]
+
+---
+build.dart --machine --changed=lib\bars\button_bar.dart
+
+build.dart finished [2355 ms]
+
+---
+build.dart --machine --changed=lib\bars\button_bar.dart
+
+build.dart finished [2373 ms]
+
+---
+build.dart --machine --changed=lib\bars\button_bar.dart
+
+build.dart finished [2313 ms]
+
+---
+build.dart --machine --changed=lib\bars\button_bar.dart
+
+build.dart finished [2652 ms]
+
+---
+build.dart --machine --changed=lib\bars\button_bar.dart
+
+build.dart finished [3702 ms]
+
+---
+build.dart --machine --changed=lib\bars\button_bar.dart
+
+build.dart finished [2303 ms]
+
+---
+build.dart --machine --changed=lib\bars\button_bar.dart
+
+build.dart finished [3118 ms]
+
+---
+build.dart --machine --changed=lib\bars\button_bar.dart
+
+build.dart finished [2290 ms]
+
+---
+build.dart --machine --changed=lib\bars\button_bar.dart
+
+build.dart finished [2310 ms]
+
+---
+build.dart --machine --changed=lib\bars\button_bar.dart
+
+build.dart finished [2278 ms]
+
+---
+build.dart --machine --changed=lib\bars\button_bar.dart
+
+build.dart finished [2803 ms]
+
+---
+build.dart --machine --changed=lib\bars\button_bar.dart
+
+build.dart finished [2650 ms]
+
+---
+build.dart --machine --changed=lib\bars\button_bar.dart
+
+build.dart finished [2276 ms]
+
+---
+build.dart --machine --changed=lib\bars\button_bar.dart
+
+build.dart finished [3758 ms]
+
+---
+build.dart --machine --changed=lib\bars\button_bar.dart
+
+build.dart finished [2956 ms]
+
+---
+build.dart --machine --changed=lib\bars\button_bar.dart
+
+build.dart finished [2458 ms]
+
+---
+build.dart --machine --changed=lib\bars\button_bar.dart
+
+build.dart finished [2215 ms]
+
+---
+build.dart --machine --changed=lib\bars\button_bar.dart
+
+build.dart finished [2988 ms]
+
+---
+build.dart --machine --changed=lib\bars\button_bar.dart
+
+build.dart finished [2611 ms]
+
+---
+build.dart --machine --changed=lib\bars\button_bar.dart
+
+build.dart finished [2535 ms]
+
+---
+build.dart --machine --changed=lib\bars\button_bar.dart
+
+build.dart finished [2560 ms]
+
+---
+build.dart --machine --changed=lib\bars\button_bar.dart
+
+build.dart finished [2406 ms]
+
+---
+build.dart --machine --changed=lib\bars\button_bar.dart
+
+build.dart finished [4215 ms]
+
+---
+build.dart --machine --changed=lib\bars\button_bar.dart
+
+build.dart finished [2387 ms]
+
+---
+build.dart --machine --changed=lib\bars\button_bar.dart
+
+build.dart finished [3534 ms]
+
+---
+build.dart --machine --changed=web\button_bar_view.html
+
+build.dart finished [2683 ms]
+
+---
+build.dart --machine --changed=lib\bars\button_bar.dart
+
+build.dart finished [2908 ms]
+
+---
+build.dart --machine --changed=web\button_bar_view.html
+
+build.dart finished [3319 ms]
+
+---
+build.dart --machine --changed=web\button_bar_view.html
+
+build.dart finished [2363 ms]
+

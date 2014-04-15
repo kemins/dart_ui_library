@@ -7,17 +7,11 @@
       }
     }
     
-    span {
-    }
-    
-    button {
-    }
-    
     </style>
     
     <span>
       <template bind repeat="{{item in dataProvider}}">
-        <button on-click="{{onButtonClick}}" value="{{item.value}}">{{item.label}}</button>
+        <button class="{{buttonClass}}" on-click="{{onButtonClick}}" value="{{item.value}}">{{item.label}}</button>
       </template>
     </span>
     
